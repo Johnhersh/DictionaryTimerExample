@@ -5,10 +5,8 @@ var app = builder.Build();
 
 var taskingManager = new TaskingManager();
 
-var cancellationToken = new CancellationToken();
-await taskingManager.StartAsync(cancellationToken);
+await taskingManager.StartAsync();
 
 app.Run();
 
-var stopCancellationToken = new CancellationToken();
-await taskingManager.StopAsync(stopCancellationToken);
+await taskingManager.StopAsync();

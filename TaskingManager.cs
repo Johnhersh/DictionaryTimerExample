@@ -17,12 +17,12 @@ public class TaskingManager
         _refreshEventsTimer = new PeriodicTimer(TimeSpan.FromMilliseconds(1000));
     }
     
-    public async Task StartAsync(CancellationToken cancellationToken)
+    public async Task StartAsync()
     {
         _timerTask = StartTimer();
     }
 
-    public async Task StopAsync(CancellationToken cancellationToken)
+    public async Task StopAsync()
     {
         _refreshEventsTimer.Dispose();
         if (_timerTask is not null) await _timerTask;
